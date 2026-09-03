@@ -6,6 +6,12 @@
 ╚═══════════════════════════════════════════════════════════════╝
 """
 
+import site
+import sys
+user_site = site.getusersitepackages()
+if user_site not in sys.path:
+    sys.path.insert(0, user_site)
+
 import streamlit as st
 import numpy as np
 import trimesh
